@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Settings | Pace & Crux</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <a class="settings-icon" href="javascript:history.back()">←</a>
+
+    <h1>Settings</h1>
+    <h2>Customize your training units</h2>
+
+    <div class="settings-card">
+
+        <div class="setting-row">
+
+            <label>Temperature Unit</label>
+
+            <div class="toggle-group" data-setting="tempUnit">
+                <button type="button" data-value="C">°C</button>
+                <button type="button" data-value="F">°F</button>
+            </div>
+
+        </div>
+
+        <div class="setting-row">
+
+            <label>Distance Unit</label>
+
+            <div class="toggle-group" data-setting="distanceUnit">
+                <button type="button" data-value="mi">mi</button>
+                <button type="button" data-value="km">km</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/js/settings.js"></script>
+
+</body>
+
+</html>

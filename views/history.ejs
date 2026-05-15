@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>History</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <h1>Workout History</h1>
+
+    <a class="settings-icon" href="/settings">⚙️</a>
+
+    <div class="history-container">
+
+        <% entries.forEach(entry => { %>
+
+            <div class="entry-card">
+
+                <h2><%= entry.workoutType %></h2>
+                <p><strong>Duration:</strong> <%= entry.duration %> min</p>
+                <p><strong>Food:</strong> <%= entry.food %></p>
+                <p><strong>Calories:</strong> <%= entry.calories %></p>
+                <p><strong>Pain:</strong> <%= entry.painLevel %>/10</p>
+                <p><strong>Location:</strong> <%= entry.city %></p>
+                <p>
+                    <strong>Temperature:</strong>
+                    <span class="temperature" data-celsius="<%= entry.temperature %>">
+                        <%= entry.temperature %>°C
+                    </span>
+                </p>
+                <p>
+                    <strong>Wind:</strong>
+                    <span class="wind" data-kmh="<%= entry.windSpeed %>">
+                        <%= entry.windSpeed %> km/h
+                    </span>
+                </p>
+
+                <p><%= entry.notes %></p>
+
+            </div>
+
+        <% }) %>
+
+    </div>
+    <script src="/js/history.js"></script>
+
+</body>
+</html>

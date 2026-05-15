@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Pace & Crux</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+
+
+<body>
+
+    <h1>Pace & Crux</h1>
+    <h2>Fueling and tracking for climber-runners</h2>
+
+    <a class="settings-icon" href="/settings">⚙️</a>
+
+    <form action="/submit" method="POST">
+
+        <label>Workout Type</label>
+        <select name="workoutType">
+            <option>Running</option>
+            <option>Climbing</option>
+            <option>Gym</option>
+            <option>Rehab</option>
+        </select>
+
+        <label>Duration (minutes)</label>
+        <input type="number" name="duration">
+
+        <label>Food Eaten</label>
+        <input type="text" name="food">
+
+        <label>Calories</label>
+        <input type="number" name="calories">
+
+        <label>Protein (g)</label>
+        <input type="number" name="protein">
+
+        <label>Carbs (g)</label>
+        <input type="number" name="carbs">
+
+        <label>Fat (g)</label>
+        <input type="number" name="fat">
+
+        <label>Pain Level (0-10)</label>
+        <input type="number" name="painLevel" min="0" max="10">
+
+        <label>Rehab Exercise</label>
+        <input type="text" name="rehab">
+
+        <label>Planned Workout</label>
+        <input type="text" name="plannedWorkout">
+
+        <label>Notes</label>
+        <textarea name="notes"></textarea>
+
+        <label>Location</label>
+        <input type="text" id="citySearch" placeholder="Search city">
+        <div id="suggestions"></div>
+
+        <button type="button" id="locationBtn">
+            Use Current Location
+        </button>
+
+        <input type="hidden" name="latitude" id="latitude">
+        <input type="hidden" name="longitude" id="longitude">
+        <input type="hidden" name="city" id="city">
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
