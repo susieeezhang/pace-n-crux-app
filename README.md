@@ -8,7 +8,7 @@ Group Members: Susie Zhang (119017036)
 
 App Description: Pace & Crux is a fitness tracking app for climber-runners. Users can log workouts, food, rehab notes, location, weather, and nutrition data.
 
-YouTube Video Link: 
+YouTube Video Link: https://www.youtube.com/watch?v=vhQ1zX4Dh7o
 
 APIs: 
 Open-Meteo Weather API (https://open-meteo.com/)
