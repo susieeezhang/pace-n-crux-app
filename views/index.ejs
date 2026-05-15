@@ -29,20 +29,46 @@
         <label>Duration (minutes)</label>
         <input type="number" name="duration">
 
+
         <label>Food Eaten</label>
-        <input type="text" name="food">
+        <input type="text" id="food" placeholder="banana, eggs, chicken breast">
 
-        <label>Calories</label>
-        <input type="number" name="calories">
+        <button type="button" id="analyzeFoodBtn">Analyze Nutrition</button>
+        <button type="button" id="addFoodBtn">Add Food</button>
 
-        <label>Protein (g)</label>
-        <input type="number" name="protein">
+        <div class="macro-grid">
+            <div class="macro-card">
+                <p>Calories</p>
+                <h3 id="calories">--</h3>
+            </div>
 
-        <label>Carbs (g)</label>
-        <input type="number" name="carbs">
+            <div class="macro-card">
+                <p>Protein</p>
+                <h3 id="protein">--</h3>
+            </div>
 
-        <label>Fat (g)</label>
-        <input type="number" name="fat">
+            <div class="macro-card">
+                <p>Carbs</p>
+                <h3 id="carbs">--</h3>
+            </div>
+
+            <div class="macro-card">
+                <p>Fat</p>
+                <h3 id="fat">--</h3>
+            </div>
+        </div>
+
+        <h3>Food List</h3>
+        <ul id="foodList"></ul>
+
+        <input type="hidden" name="food" id="foodInput">
+        <input type="hidden" name="calories" id="caloriesInput">
+        <input type="hidden" name="protein" id="proteinInput">
+        <input type="hidden" name="carbs" id="carbsInput">
+        <input type="hidden" name="fat" id="fatInput">
+
+
+
 
         <label>Pain Level (0-10)</label>
         <input type="number" name="painLevel" min="0" max="10">
@@ -53,8 +79,8 @@
         <label>Planned Workout</label>
         <input type="text" name="plannedWorkout">
 
-        <label>Notes</label>
-        <textarea name="notes"></textarea>
+        
+
 
         <label>Location</label>
         <input type="text" id="citySearch" placeholder="Search city">
@@ -67,6 +93,10 @@
         <input type="hidden" name="latitude" id="latitude">
         <input type="hidden" name="longitude" id="longitude">
         <input type="hidden" name="city" id="city">
+
+
+        <label>Notes</label>
+        <textarea name="notes"></textarea>
 
         <button type="submit">Submit</button>
 

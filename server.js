@@ -18,7 +18,6 @@ mongoose.connect(process.env.MONGO_CONNECTION_STRING)
 .then(() => console.log("Connected to MongoDB"))
 .catch(err => console.log(err));
 
-app.use("/", entriesRouter);
 
 app.get("/settings", (req, res) => {
     res.render("settings");
@@ -68,9 +67,46 @@ app.post("/submit", async (req, res) => {
 
     console.log("Saved entry:", newEntry);
 
-    res.send("Entry saved to MongoDB!");
+    res.redirect("/history");
 
 });
+
+app.post("/analyze-food", async (req, res) => {
+
+    const food = req.body.food;
+
+    const url =
+        `https://api.edamam.com/api/nutrition-data` +
+        `?app_id=${process.env.EDAMAM_APP_ID}` +
+        `&app_key=${process.env.EDAMAM_APP_KEY}` +
+        `&nutrition-type=logging` +
+        `&ingr=${encodeURIComponent(food)}`;
+
+    const response = await fetch(url);
+
+    const data = await response.json();
+
+
+    res.json({
+        calories: Math.round(data.calories || 0),
+
+        protein: Math.round(
+            data.totalNutrients?.PROCNT?.quantity || 0
+        ),
+
+        carbs: Math.round(
+            data.totalNutrients?.CHOCDF?.quantity || 0
+        ),
+
+        fat: Math.round(
+            data.totalNutrients?.FAT?.quantity || 0
+        ),
+
+        weight: Math.round(data.totalWeight || 0)
+    });
+});
+
+app.use("/", entriesRouter);
 
 const PORT = 3000;
 
