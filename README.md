@@ -16,6 +16,6 @@ Edamam Nutrition Analysis API (https://developer.edamam.com/edamam-nutrition-api
 
 Contact Email: yszhang@terpmail.umd.edu
 
-Deployed App Link: 
+Deployed App Link: https://pace-n-crux-app.onrender.com
 
 AI Use: ChatGPT
